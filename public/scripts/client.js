@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 const createTweetElement = function(tweet) {
   let $tweet = $(`
     <article class="tweet">
@@ -15,7 +14,7 @@ const createTweetElement = function(tweet) {
       </header>
       <p>${tweet.content.text}</p>
       <footer>
-        <span>${new Date(tweet.created_at).toLocaleString()}</span>
+        <span>${timeago.format(tweet.created_at)}</span>
         <div>
           <i class="fa fa-flag"></i>
           <i class="fa fa-retweet"></i>
@@ -28,36 +27,28 @@ const createTweetElement = function(tweet) {
 }
 
 const renderTweets = function(tweets) {
+  // Clear the tweets container before appending new tweets
+  $('#tweets-container').empty();
   for(let tweet of tweets) {
     const $tweet = createTweetElement(tweet);
     $('#tweets-container').append($tweet);
   }
 }
 
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd"
-    },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
+const loadTweets = function() {
+  $.get('/tweets', function(data) {
+    renderTweets(data);
+  });
+}
 
-renderTweets(data);
+$(document).ready(function() {
+  loadTweets();
+
+  $('form').on('submit', function(event) {
+    event.preventDefault();
+    let formData = $(this).serialize();
+    $.post('/tweets', formData, function() {
+      loadTweets();
+    });
+  });
+});

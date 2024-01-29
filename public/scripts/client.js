@@ -46,6 +46,21 @@ $(document).ready(function() {
 
   $('form').on('submit', function(event) {
     event.preventDefault();
+
+    // Get the tweet text
+    let tweetText = $(this).find('textarea').val();
+
+    // Check if the tweet text is empty or too long
+    if (tweetText === '') {
+      // Show an alert and return to prevent the form from being submitted
+      alert('Error: Tweet content cannot be empty');
+      return;
+    } else if (tweetText.length > 140) {
+      // Show an alert and return to prevent the form from being submitted
+      alert('Error: Tweet content cannot exceed 140 characters');
+      return;
+    }
+
     let formData = $(this).serialize();
     $.post('/tweets', formData, function() {
       loadTweets();

@@ -1,67 +1,73 @@
-.new-tweet {
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 20px;
-  border-radius: 10px;
-  width: 100%; 
+  align-content: flex-start;
+
 }
 
-/* Styles for screens larger than or equal to 1024px */
-@media (min-width: 1024px) {
-  .new-tweet {
-    width: 50%; /* Change the width to 50% */
-    margin: auto; /* Center the element */
-  }
-}
-
-/* Navigation bar styles */
-nav {
-  position: sticky;
-  top: 0;
-  height: 120px;
-  width: 100%;
-  background-color: #4056A1;
-  color: #FFFFFF;
-  padding: 1.5em;
-}
-
-/* Header styles */
-header {
-  height: 400px;
-  width: 100%;
-  text-align: center;
-}
-
-header img {
-  margin: auto;
-}
-
-/* Main container styles */
-.main-container {
-  width: 90%;
-  margin: auto;
+.user-input {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+
 }
 
-/* Character counter styles */
+textarea {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  resize: none;
+  height: 30px;
+}
+
+.button-counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 3px solid;
+  padding: 10px;
+}
+
+.submit-button {
+  background-color: #4056A1;
+  color: #fff;
+  font-family: "Bungee";
+  font-size: 0.75em;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+}
+
 .counter {
-  color: #000;
+  font-family: "Bungee";
 }
 
-.counter.over-limit {
-  color: #f00;
+div label {
+  font-weight: bold;
 }
 
-/* Tweet styles */
-.tweet {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.negative {
+  color: red;
 }
 
-.tweet:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.fa-solid.fa-triangle-exclamation {
+  color: red;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.over-140 {
+  border: 5px solid red;
+  text-align: center;
+  display: none;
+}
+
+.no-text {
+  border: 5px solid red;
+  text-align: center;
+  display: none;
+}
+
+.opacity {
+  opacity: 1;
 }

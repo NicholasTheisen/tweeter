@@ -18,71 +18,50 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-nav {
-  font-family: 'Bungee', sans-serif;
-}
+ * {
+  font-family: "Source Sans 3", sans-serif;
+ }
 
-main {
+ nav {
+  font-family: "Bungee";
+ }
+
+ body {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: center;
+
+ }
+
+ .container {
   width: 90%;
-  margin: 0 auto;
-  background-color: inherit;
-}
+  background-color: #f4f1ec;
 
-#tweets-container {
-  width: 100%;
-  padding: 20px;
-}
+ }
 
-.tweet {
-  border: 1px solid #ccc;
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #fff;
-  transition: box-shadow 0.3s ease-in-out;
-}
+ @media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
 
-.tweet:hover {
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
+  }
 
-.tweet header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .container {
+    margin-top: 150px;
+    padding-right: 10px;
+  }
 
-.tweet .user-info {
-  display: flex;
-  align-items: center;
-}
-
-.tweet .user-info img {
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.tweet .user-handle {
-  color: #aaa;
-}
-
-.tweet .tweet-content {
-  margin: 10px 0;
-}
-
-.tweet footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: #aaa;
-}
-
-.tweet .tweet-icons i {
-  margin-right: 5px;
-}
+  .user-banner {
+    margin-top: 150px;
+    margin-right: 10px;
+    padding-left: 10px;
+  }
+ }

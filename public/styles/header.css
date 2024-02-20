@@ -1,16 +1,12 @@
 header {
-  height: 520px; /* 400px visible + 120px hidden behind the nav */
+  height: 400px;
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
-  background-color: #008f8f;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  background-blend-mode: multiply;
-  margin-top: 120px; /* Push the header down by the height of the nav */
+  justify-content: center;
 }
 
-header img {
-  margin-bottom: 20px; /* Space between the avatar and the name */
+.avatar {
+  display: block;
+  margin: auto;
 }

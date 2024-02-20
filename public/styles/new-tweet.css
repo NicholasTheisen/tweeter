@@ -7,4 +7,61 @@
   background-size: cover;
   padding: 20px;
   border-radius: 10px;
+  width: 100%; 
+}
+
+/* Styles for screens larger than or equal to 1024px */
+@media (min-width: 1024px) {
+  .new-tweet {
+    width: 50%; /* Change the width to 50% */
+    margin: auto; /* Center the element */
+  }
+}
+
+/* Navigation bar styles */
+nav {
+  position: sticky;
+  top: 0;
+  height: 120px;
+  width: 100%;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 1.5em;
+}
+
+/* Header styles */
+header {
+  height: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+header img {
+  margin: auto;
+}
+
+/* Main container styles */
+.main-container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* Character counter styles */
+.counter {
+  color: #000;
+}
+
+.counter.over-limit {
+  color: #f00;
+}
+
+/* Tweet styles */
+.tweet {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tweet:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }

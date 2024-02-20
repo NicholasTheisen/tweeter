@@ -42,46 +42,47 @@ main {
 
 .tweet {
   border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
-  transition: box-shadow 0.3s ease;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .tweet:hover {
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .tweet header {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.tweet header img {
+.tweet .user-info {
+  display: flex;
+  align-items: center;
+}
+
+.tweet .user-info img {
   border-radius: 50%;
   margin-right: 10px;
 }
 
-.tweet header h2 {
-  margin-right: 10px;
+.tweet .user-handle {
+  color: #aaa;
+}
+
+.tweet .tweet-content {
+  margin: 10px 0;
 }
 
 .tweet footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 20px;
+  color: #aaa;
 }
 
-.tweet footer div {
-  display: flex;
-  gap: 10px;
-}
-
-.tweet footer div i {
-  color: #ccc;
-  transition: color 0.3s ease;
-}
-
-.tweet:hover footer div i {
-  color: #000;
+.tweet .tweet-icons i {
+  margin-right: 5px;
 }

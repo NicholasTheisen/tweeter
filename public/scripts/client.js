@@ -17,7 +17,7 @@ $(document).ready(function () {
 
     const elementHTML = `
       <article class="tweet">
-        <header>
+        <header class="tweet-header">
           <div>
             <img src=${tweetData.user.avatars}>
             <h3>${tweetData.user.name}</h3>

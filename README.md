@@ -20,5 +20,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Images
 
-![Alt text] (https://i.imgur.com/jlBVsyY.png)
-![Alt text] (https://i.imgur.com/CccW3KN.png)
+!["Front Page"](https://i.imgur.com/jlBVsyY.png)
+!["Error Message When Adding Too Many Characters"](https://i.imgur.com/CccW3KN.png)

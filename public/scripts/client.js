@@ -45,9 +45,7 @@ $(document).ready(function () {
   const renderTweets = function (tweets) {
     $('.tweets-container').empty();
     tweets.forEach(function (tweet) {
-      // Here, call createTweetElement for each tweet
       const $tweetElement = createTweetElement(tweet);
-      // Then, append it to the tweets container
       $('.tweets-container').prepend($tweetElement);
     });
   };
@@ -55,17 +53,13 @@ $(document).ready(function () {
   const loadTweets = function () {
     $.ajax('/tweets', { method: 'GET' })
       .then(function (data) {
-        console.log('Success: ', renderTweets(data))
-        console.log(data);
+        renderTweets(data);
       });
-
   };
 
   loadTweets();
 
-
-
-  $("section.new-tweet form").on("submit", function (handler) {
+  $("section.new-tweet form").on("submit", function (event) {
     event.preventDefault();
 
     let inputLength = $(this).closest('form').find('textarea').val().length;
@@ -91,8 +85,5 @@ $(document).ready(function () {
       });
 
     $('textarea').val('').trigger("input");
-    
   });
-
-
 });
